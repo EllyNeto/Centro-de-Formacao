@@ -1,0 +1,16 @@
+{
+    "github.copilot.editor.enableCodeActions": false,
+    "github.copilot.chat.useProjectTemplates": false,
+    "github.copilot.chat.reviewSelection.enabled": false,
+    "github.copilot.chat.reviewAgent.enabled": false,
+    "github.copilot.chat.localIndex.enabled": false,
+    "github.copilot.chat.organizationCustomAgents.enabled": false,
+    "github.copilot.chat.organizationInstructions.enabled": false,
+    "github.copilot.chat.copilotDebugCommand.enabled": false,
+    "github.copilot.chat.tools.viewImage.enabled": false,
+    "github.copilot.chat.exploreAgent.enabled": false,
+    "github.copilot.chat.gemini35FlashReducedToolUsePrompt.enabled": false,
+    "github.copilot.chat.gpt55GetChangedFilesTool.enabled": false,
+    "github.copilot.chat.gpt55ReadFileTool.enabled": false,
+    "github.copilot.chat.gpt56Verbosity.enabled": false
+}

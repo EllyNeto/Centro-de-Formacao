@@ -1,4 +1,4 @@
-<section x-show="activeTab === 'dashboard'">
+<section x-show="'dashboard'">
   <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
     <template x-for="kpi in kpis" :key="kpi.label">
       <div class="bg-card rounded-xl border border-slate-200 p-4">
@@ -42,7 +42,8 @@
           </li>
         </template>
       </ul>
-      <button @click="activeTab = 'inscricoes'" class="mt-4 text-xs font-semibold text-ink hover:text-amberD">Ver todas as inscrições →</button>
+      <a href="/inscricoes" class="mt-4 inline-block text-xs font-semibold text-ink hover:text-amberD">Ver todas as inscrições →</a>
     </div>
   </div>
 </section>
+

@@ -68,6 +68,7 @@
     pagamentos: @json($pagamentos),
   };
 </script>
+
 <script src="{{ asset('js/painel.js') }}"></script>
 </body>
 </html>

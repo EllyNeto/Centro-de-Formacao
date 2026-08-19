@@ -1,9 +1,6 @@
 function painel() {
   const dados = window.PAINEL_DATA || {};
 
-  // Ícones dos itens de navegação continuam definidos aqui (são estáticos,
-  // não fazem sentido vir da base de dados). São fundidos com os navItems
-  // que vêm do Laravel (id/label/subtitle), por id.
   const icones = {
     dashboard:  '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="9" rx="1"/><rect x="14" y="3" width="7" height="5" rx="1"/><rect x="14" y="12" width="7" height="9" rx="1"/><rect x="3" y="16" width="7" height="5" rx="1"/></svg>',
     cursos:     '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg>',
@@ -22,6 +19,19 @@ function painel() {
     modalDocente: false,
     modalInscricao: false,
     modalPagamento: false,
+
+    // Estado da Aba de Cursos
+    cursoFiltroArea: 'Todas',
+    cursoPesquisa: '',
+
+    get cursosFiltrados() {
+      return (this.cursos || []).filter(c => {
+        const bateArea = this.cursoFiltroArea === 'Todas' || c.area === this.cursoFiltroArea;
+        const q = (this.cursoPesquisa || '').toLowerCase().trim();
+        const bateBusca = !q || c.nome.toLowerCase().includes(q) || c.codigo.toLowerCase().includes(q) || c.area.toLowerCase().includes(q);
+        return bateArea && bateBusca;
+      });
+    },
 
     navItems: (dados.navItems || []).map(item => ({
       ...item,
